@@ -73,7 +73,7 @@ data_final <- rbind(data_train, data_test) # Finished 1
 col_names <- colnames(data_final)
 
 # LogicalVector stating TRUE for the ID, mean() & stddev() columns and FALSE for all others
-logical_column_vector = (grepl("activity..", col_names) | grepl("subject..", col_names) | grepl("-mean..", col_names) & !grepl("-meanFreq..", col_names) & !grepl("mean..-", col_names) | grepl("-std..", col_names) & !grepl("-std()..-", col_names));
+logical_column_vector <- (grepl("activity..", col_names) | grepl("subject..", col_names) | grepl("-mean..", col_names) & !grepl("-meanFreq..", col_names) & !grepl("mean..-", col_names) | grepl("-std..", col_names) & !grepl("-std()..-", col_names));
 
 # Subset the data_final table in order to extract only the columns that pertain to mean and stddeviation
 data_final <- data_final[logical_column_vector == TRUE] # Finished 2
@@ -88,18 +88,18 @@ col_names <- colnames(data_final)
 # and expanding out f|t for freq and time for prefixes
 for (i in 1:length(col_names)) # loop through the existing col_names and update the labels
 {
-  col_names[i] = gsub("\\()","", col_names[i])
-  col_names[i] = gsub("-std$","StdDev", col_names[i])
-  col_names[i] = gsub("-mean","Mean", col_names[i])
-  col_names[i] = gsub("^(t)","time", col_names[i])
-  col_names[i] = gsub("^(f)","freq", col_names[i])
-  col_names[i] = gsub("([Gg]ravity)","Gravity", col_names[i])
-  col_names[i] = gsub("([Bb]ody[Bb]ody|[Bb]ody)","Body", col_names[i])
-  col_names[i] = gsub("[Gg]yro","Gyro", col_names[i])
-  col_names[i] = gsub("AccMag","AccMagnitude", col_names[i])
-  col_names[i] = gsub("([Bb]odyaccjerkmag)","BodyAccJerkMagnitude", col_names[i])
-  col_names[i] = gsub("JerkMag","JerkMagnitude", col_names[i])
-  col_names[i] = gsub("GyroMag","GyroMagnitude", col_names[i])
+  col_names[i] <- gsub("\\()","", col_names[i])
+  col_names[i] <- gsub("-std$","StdDev", col_names[i])
+  col_names[i] <- gsub("-mean","Mean", col_names[i])
+  col_names[i] <- gsub("^(t)","time", col_names[i])
+  col_names[i] <- gsub("^(f)","freq", col_names[i])
+  col_names[i] <- gsub("([Gg]ravity)","Gravity", col_names[i])
+  col_names[i] <- gsub("([Bb]ody[Bb]ody|[Bb]ody)","Body", col_names[i])
+  col_names[i] <- gsub("[Gg]yro","Gyro", col_names[i])
+  col_names[i] <- gsub("AccMag","AccMagnitude", col_names[i])
+  col_names[i] <- gsub("([Bb]odyaccjerkmag)","BodyAccJerkMagnitude", col_names[i])
+  col_names[i] <- gsub("JerkMag","JerkMagnitude", col_names[i])
+  col_names[i] <- gsub("GyroMag","GyroMagnitude", col_names[i])
 }
 # assign the updated col_names values to the data_final table
 colnames(data_final) <- col_names # Finished 4
