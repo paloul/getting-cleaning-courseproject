@@ -23,7 +23,7 @@ setwd("~") # i.e. "/Users/paloul"
 sub_path <- file.path("Dropbox", "Coursera", "GetCleanData_CourseProj")
 wd_full_path <- file.path(getwd(), sub_path)
 if (!file.exists(wd_full_path)) {
-  dir.create(wd_full_path) # subpath does not exist, create it
+  dir.create(wd_full_path, recursive = TRUE) # subpath does not exist, create it
 }
 setwd(wd_full_path) 
 
