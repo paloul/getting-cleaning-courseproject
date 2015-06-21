@@ -58,7 +58,7 @@ Outline the steps taken to satisfy the 5 requirements of the Course project
 ### Appropriately labels the data set with descriptive variable names.
 
 1. Using the updated *col_names* variable loop through all current column names in *data_final*
-2. Check for matching expressions and convert to meaningful versions for column names
+2. Check for matching expressions using gsub() for pattern matching and replacement in order to convert to meaningful versions for column names
 3. Once complete, set the column names of *data_final* using colnames() with the variable *col_names*
 
 ### From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
