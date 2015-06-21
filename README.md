@@ -29,7 +29,8 @@ The script attempts to set the initial working directory to the user's home fold
 
 For my system, I have set the subsequent working directory to *Dropbox/Coursera/GetCleanData_CourseProj*. You can change this on line 23, though if it doesnt exist on your disk it will be created recursively via *dir.create(recursive=true)* under the root working directory.
 
-Once you pass directory creation everything else is automated. 
+Once you pass directory creation everything else is automated
+
 1. The script will download the original data zip file to the working directory
 2. Unzip the zip file to the working directory
 3. Proceed with the steps detailed above
